@@ -56,13 +56,17 @@ console.log(inventors.map(names));
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
-inventorsSortBirth = inventors;
+let inventorsSortBirth = inventors.slice();
 
 inventorsSortBirth.sort( (a, b) => (a.year - b.year));
 console.log(`Sorted by Birth:${inventorsSortBirth.map((item) => ` ${item.first}`)}`);
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
+
+let inventorsYearsLived = inventors.slice().map( item => item.passed - item.year );
+inventorsTotalYearsLived = inventorsYearsLived.reduce((accumulator, item) => accumulator + item);
+console.log(`inventorsTotalYearsLived: ${inventorsTotalYearsLived}.`);
 
     // 5. Sort the inventors by years lived
 
