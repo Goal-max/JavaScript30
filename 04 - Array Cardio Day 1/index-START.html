@@ -94,6 +94,22 @@ console.log( `Sorted by last name: ${sortLastName.sort()}`);
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
 
+let car = data.filter( mode => mode === 'car');
+let truck = data.filter( mode => mode === 'truck' );
+let bike = data.filter( mode => mode === 'bike' );
+let walk = data.filter( mode => mode === 'walk' );
+let van = data.filter( mode => mode === 'van' );
+
+let totalCar = car.length;
+let totalTruck = truck.length;
+let totalBike = bike.length; 
+let totalWalk = walk.length;
+let totalVan = van.length;
+
+console.log(`Total cars are ${totalCar}, trucks are ${totalTruck}, bikes are ${totalBike}, walks are ${totalWalk}, vans are ${totalVan}`);
+
+
+
   </script>
 </body>
 </html>
