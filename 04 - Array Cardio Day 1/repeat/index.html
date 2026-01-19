@@ -115,23 +115,15 @@ function find (element) {
  
 //alternate function to do above
 function searchAttribute (element) {
-  if (element.nodeType === Node.ELEMENT_NODE) {
-    console.log(element);
-    let title = element.getAttribute("title");  
-    if (title !== null) {
-      if(title.includes(" de ")) {
-        list.push(element.getAttribute("title"));
-      }
-    }
+  if (
+    element.nodeType === Node.ELEMENT_NODE 
+    && element.getAttribute("title") !== null 
+    && element.getAttribute("title").includes(" de ")
+  ) {
+    list.push(element.getAttribute("title"));
   } 
-    element.childNodes.forEach(searchAttribute);
-  
-  
+  element.childNodes.forEach(searchAttribute);
 }
-
-list;
-
-
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
