@@ -81,7 +81,18 @@ let soldierYears = test.reduce((accumulator, soldier) =>
 
 console.log(`total years for soldiers is ${soldierYears}`);
     // 5. Sort the inventors by years lived
+function compareLived (a, b) {
+  const persA = a.passed - a.year;
+  const persB = b.passed - b.year;
+  const compare = persA - persB;
+  if (compare > 1) return 1;
+  if (compare === 0) return 0;
+  if (compare < 1) return -1;
+}
 
+const invLived = inventors.sort(compareLived);
+
+console.log(`Inventors sorted by years lived is ${invLived}`);
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
