@@ -77,7 +77,8 @@ for (let i = 0; i < 5; i++) {
 
 let soldierYears = test.reduce((accumulator, soldier) => 
   accumulator + soldier["passed"] - soldier["year"]
-,0);
+,test[0]["passed"] - test[0]["year"]);
+
 console.log(`total years for soldiers is ${soldierYears}`);
     // 5. Sort the inventors by years lived
 
