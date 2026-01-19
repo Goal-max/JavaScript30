@@ -100,23 +100,37 @@ console.log(`Inventors sorted by years lived is ${invLived}`);
 let list = [];
 
 nodes = Array.from(document.querySelectorAll("div.mw-category.mw-category-columns"));
- nodes.forEach(item => find(item));
+ nodes.forEach(searchAttribute);
  
-
- 
- function find (element) {
+function find (element) {
    if(element.nodeType == Node.TEXT_NODE) {
      if (element.nodeValue.includes(" de ")) {
-       console.log(element.nodeValue);
        list.push(element.nodeValue);
      }
    } else {
-     element.childNodes.forEach(item => find(item));
+     element.childNodes.forEach(find)
    } 
    
  }
  
-list.length;
+//alternate function to do above
+function searchAttribute (element) {
+  if (element.nodeType === Node.ELEMENT_NODE) {
+    console.log(element);
+    let title = element.getAttribute("title");  
+    if (title !== null) {
+      if(title.includes(" de ")) {
+        list.push(element.getAttribute("title"));
+      }
+    }
+  } 
+    element.childNodes.forEach(searchAttribute);
+  
+  
+}
+
+list;
+
 
 
     // 7. sort Exercise
