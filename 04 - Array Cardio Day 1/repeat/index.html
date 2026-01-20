@@ -140,6 +140,28 @@ function sortLast (a, b) {
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
 
+let car = data.reduce((accumulator, item) => {
+  switch (item) {
+    case "car": 
+      accumulator.car += 1; 
+      break;
+    case "truck":
+      accumulator.truck += 1;
+      break;
+    case "bike":
+      accumulator.bike += 1;
+      break;
+    case "walk":
+      accumulator.walk +=1;
+      break;
+    case "van":
+      accumulator.van +=1;
+      break;
+  }
+  return accumulator;
+}, {car: 0, truck: 0, bike: 0, walk: 0, van: 0});
+
+
   </script>
 </body>
-</html>
+a</html>
